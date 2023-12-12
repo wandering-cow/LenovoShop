@@ -25,6 +25,8 @@
             </div>
           </template>
         </el-table-column>
+
+
         <el-table-column label="操作" width="180" align="center">
           <template v-slot="scope">
             <el-button plain type="primary" @click="handleEdit(scope.row)" size="mini">编辑</el-button>
@@ -55,17 +57,19 @@
         <el-form-item prop="description" label="分类描述">
           <el-input v-model="form.description" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="分类图标">
-          <el-upload
-              class="avatar-uploader"
-              :action="$baseUrl + '/files/upload'"
-              :headers="{ token: user.token }"
-              list-type="picture"
-              :on-success="handleAvatarSuccess"
-          >
-            <el-button type="primary">上传图标</el-button>
-          </el-upload>
-        </el-form-item>
+
+
+      <el-form-item label="分类图标">
+        <el-upload
+            class="avatar-uploader"
+            :action="$baseUrl + '/files/upload'"
+            :headers="{ token: user.token }"
+            list-type="picture"
+            :on-success="handleAvatarSuccess"
+        >
+          <el-button type="primary">上传图标</el-button>
+        </el-upload>
+      </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="fromVisible = false">取 消</el-button>
@@ -86,7 +90,7 @@ export default {
       pageNum: 1,   // 当前的页码
       pageSize: 10,  // 每页显示的个数
       total: 0,
-      name: null,
+      title: null,
       fromVisible: false,
       form: {},
       user: JSON.parse(localStorage.getItem('xm-user') || '{}'),
@@ -95,7 +99,7 @@ export default {
           {required: true, name: '请输入分类名称', trigger: 'blur'},
         ],
         content: [
-          {required: true, img: '请输上传分类图标', trigger: 'blur'},
+          {required: true, img: '请上传分类图标', trigger: 'blur'},
         ]
       },
       ids: []
@@ -171,7 +175,7 @@ export default {
         params: {
           pageNum: this.pageNum,
           pageSize: this.pageSize,
-          name: this.name,
+          title: this.title,
         }
       }).then(res => {
         this.tableData = res.data?.list
@@ -179,17 +183,19 @@ export default {
       })
     },
     reset() {
-      this.name = null
+      this.title = null
       this.load(1)
     },
     handleCurrentChange(pageNum) {
       this.load(pageNum)
     },
     handleAvatarSuccess(response, file, fileList) {
+      // 把头像属性换成上传的图片的链接
       this.form.img = response.data
     },
   }
 }
+
 </script>
 
 <style scoped>

@@ -5,7 +5,7 @@
 
 .manager-header {
     display: flex;
-    background-color: #07c796;
+    background-color: #2c334c;
 }
 
 .manager-header-left {
@@ -17,8 +17,8 @@
 }
 
 .manager-header-left img {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
 }
 
 .manager-header-left .title {
@@ -26,7 +26,7 @@
     margin-left: 5px;
     font-size: 20px;
     font-weight: bold;
-    color: #fff
+    color: #ddd
 }
 
 .manager-header-center {
@@ -47,7 +47,7 @@
     display: flex;
     align-items: center;
     padding-right: 10px;
-    color: #fff;
+    color: #ccc;
     cursor: default
 }
 
@@ -65,7 +65,7 @@
 .manager-main-left {
     width: 200px;
     min-height: calc(100vh - 60px);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 6px rgba(0, 21, 41, .35);
 }
 
 .manager-main-right {
@@ -112,26 +112,25 @@
 .el-menu {
     width: 200px;
     height: 100%;
-    background-color: #fff;
+    background-color: #222b40;
 }
 
 .el-submenu__title {
-    color: #666;
+    color: #ccc;
     height: 50px;
     line-height: 50px;
 }
 
 .el-menu-item {
-    color: #666;
+    color: #ccc;
     height: 50px;
     line-height: 50px;
-    background-color: #fff !important; /* 必须加上这个背景色，否则鼠标离开会出现白色 */
+    background-color: #222b40 !important; /* 必须加上这个背景色，否则鼠标离开会出现白色 */
 }
 
 .el-menu-item.is-active {
-    background-color: #cdf4ea !important;
-    color: #07c796;
-    border-right: 3px solid #07c796;
+    /*background-color: #2bb7e5 !important;*/
+    /*color: #fff;*/
 }
 
 .el-menu--inline .el-menu-item {
@@ -139,11 +138,11 @@
 }
 
 .el-menu .is-active {
-    color: #07c796 !important;
+    color: #3399ff !important;
 }
 
 .el-submenu__title:hover {
-    background-color: #e6f9f5 !important;
+    background-color: #222 !important;
 }
 
 .el-menu-item:not(.is-active):hover {
@@ -152,8 +151,7 @@
 }
 
 .el-menu-item:hover {
-    background-color: #e6f9f5 !important;
-    color: #07c796;
+    background-color: #222 !important;
 }
 
 .el-submenu__icon-arrow {
@@ -161,16 +159,15 @@
 }
 
 .el-breadcrumb__inner {
-    color: #fff !important;
+    color: #ccc !important;
 }
-.el-breadcrumb__separator {
-    color: #fff;
-}
-.el-breadcrumb {
-    margin-left: 10px;
-}
+
 .el-dropdown-menu {
     margin-top: 20px !important;
+}
+
+.el-breadcrumb {
+    margin-left: 10px;
 }
 
 th.el-table__cell {

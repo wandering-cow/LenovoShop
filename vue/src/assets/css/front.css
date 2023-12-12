@@ -50,21 +50,10 @@
 /*页面具体样式自定义*/
 .main-content {
     width: 100%;
-    margin: 0 auto;
+    margin: 5px auto;
 }
 /* ElementUI 样式覆盖 */
 .el-menu.el-menu--horizontal {
     border: none !important;
     height: 59px;
-}
-
-#tab-first, #tab-second {
-    font-size: 16px !important;
-}
-
-a {
-    color: #666666;
-}
-a:hover {
-    color: red;
 }

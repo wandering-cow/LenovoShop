@@ -11,8 +11,7 @@
     "core-js": "^3.8.3",
     "element-ui": "^2.15.14",
     "vue": "^2.6.14",
-    "vue-router": "^3.5.1",
-    "wangeditor": "^4.7.15"
+    "vue-router": "^3.5.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",

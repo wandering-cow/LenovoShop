@@ -1,14 +1,19 @@
 <template>
   <div>
+    <div class="front-notice"><i class="el-icon-bell" style="margin-right: 2px"></i>公告：{{ top }}</div>
     <!--头部-->
     <div class="front-header">
-      <div class="front-header-left" @click="navTo('/front/home')">
+      <div class="front-header-left">
         <img src="@/assets/imgs/logo.png" alt="">
-        <div class="title">天猫超市购物商城</div>
+        <div class="title">项目前台</div>
       </div>
-      <div class="front-header-center" style="text-align: right">
-        <el-input style="width: 200px" placeholder="请输入商品名称" v-model="name"></el-input>
-        <el-button type="primary" style="margin-left: 5px" @click="search">搜素</el-button>
+      <div class="front-header-center">
+        <div class="front-header-nav">
+          <el-menu :default-active="$route.path" mode="horizontal" router>
+						<el-menu-item index="/front/home">首页</el-menu-item>
+						<el-menu-item index="/front/person">个人中心</el-menu-item>
+          </el-menu>
+        </div>
       </div>
       <div class="front-header-right">
         <div v-if="!user.username">
@@ -18,24 +23,12 @@
         <div v-else>
           <el-dropdown>
             <div class="front-header-dropdown">
-              <img @click="navTo('/front/person')" :src="user.avatar" alt="">
+              <img :src="user.avatar" alt="">
               <div style="margin-left: 10px">
                 <span>{{ user.name }}</span><i class="el-icon-arrow-down" style="margin-left: 5px"></i>
               </div>
             </div>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>
-                <div style="text-decoration: none" @click="navTo('/front/cart')">我的购物车</div>
-              </el-dropdown-item>
-              <el-dropdown-item>
-                <div style="text-decoration: none" @click="navTo('/front/collect')">我的收藏</div>
-              </el-dropdown-item>
-              <el-dropdown-item>
-                <div style="text-decoration: none" @click="navTo('/front/address')">我的地址</div>
-              </el-dropdown-item>
-              <el-dropdown-item>
-                <div style="text-decoration: none" @click="navTo('/front/orders')">我的订单</div>
-              </el-dropdown-item>
               <el-dropdown-item>
                 <div style="text-decoration: none" @click="logout">退出</div>
               </el-dropdown-item>
@@ -62,14 +55,12 @@ export default {
       top: '',
       notice: [],
       user: JSON.parse(localStorage.getItem("xm-user") || '{}'),
-      name: null
     }
   },
 
   mounted() {
     this.loadNotice()
   },
-
   methods: {
     loadNotice() {
       this.$request.get('/notice/selectAll').then(res => {
@@ -90,18 +81,11 @@ export default {
     updateUser() {
       this.user = JSON.parse(localStorage.getItem('xm-user') || '{}')   // 重新获取下用户的最新信息
     },
-    navTo(url) {
-      location.href = url
-    },
     // 退出登录
     logout() {
       localStorage.removeItem("xm-user");
       this.$router.push("/login");
     },
-    search() {
-      let name = this.name ? this.name : ''
-      location.href = '/front/search?name=' + name
-    }
   }
 
 }
