@@ -1,0 +1,34 @@
+package com.ouc.lenovoshop.mapper;
+
+import com.ouc.lenovoshop.entity.Type;
+
+import java.util.List;
+
+public interface TypeMapper {
+
+    /**
+      * 新增
+    */
+    int insert(Type type);
+
+    /**
+      * 删除
+    */
+    int deleteById(Integer id);
+
+    /**
+      * 修改
+    */
+    int updateById(Type type);
+
+    /**
+      * 根据ID查询
+    */
+    Type selectById(Integer id);
+
+    /**
+      * 查询所有
+    */
+    List<Type> selectAll(Type type);
+
+}
