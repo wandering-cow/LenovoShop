@@ -16,6 +16,7 @@
           <el-select v-model="form.role" placeholder="请选择角色" style="width: 100%">
             <el-option label="管理员" value="ADMIN"></el-option>
             <el-option label="用户" value="USER"></el-option>
+            <el-option label="商家" value="USER"></el-option>
           </el-select>
         </el-form-item>
         <div style="display: flex; align-items: center">

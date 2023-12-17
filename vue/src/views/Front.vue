@@ -23,12 +23,24 @@
         <div v-else>
           <el-dropdown>
             <div class="front-header-dropdown">
-              <img :src="user.avatar" alt="">
+              <img @click="navToPerson" :src="user.avatar" alt="">
               <div style="margin-left: 10px">
                 <span>{{ user.name }}</span><i class="el-icon-arrow-down" style="margin-left: 5px"></i>
               </div>
             </div>
             <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>
+                <div style="text-decoration: none" @click="navTo('/front/cart')">我的购物车</div>
+              </el-dropdown-item>
+              <el-dropdown-item>
+                <div style="text-decoration: none" @click="navTo('/front/collect')">我的收藏</div>
+              </el-dropdown-item>
+              <el-dropdown-item>
+                <div style="text-decoration: none" @click="navTo('/front/address')">我的地址</div>
+              </el-dropdown-item>
+              <el-dropdown-item>
+                <div style="text-decoration: none" @click="navTo('/front/orders')">我的订单</div>
+              </el-dropdown-item>
               <el-dropdown-item>
                 <div style="text-decoration: none" @click="logout">退出</div>
               </el-dropdown-item>
@@ -80,6 +92,12 @@ export default {
     },
     updateUser() {
       this.user = JSON.parse(localStorage.getItem('xm-user') || '{}')   // 重新获取下用户的最新信息
+    },
+    navTo(url) {
+      location.href = url
+    },
+    navToPerson() {
+      location.href = '/front/person'
     },
     // 退出登录
     logout() {
