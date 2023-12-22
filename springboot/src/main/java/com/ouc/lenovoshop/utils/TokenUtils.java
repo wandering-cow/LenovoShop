@@ -8,6 +8,8 @@ import com.ouc.lenovoshop.common.Constants;
 import com.ouc.lenovoshop.common.enums.RoleEnum;
 import com.ouc.lenovoshop.entity.Account;
 import com.ouc.lenovoshop.service.AdminService;
+import com.ouc.lenovoshop.service.BusinessService;
+import com.ouc.lenovoshop.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -28,15 +30,20 @@ public class TokenUtils {
     private static final Logger log = LoggerFactory.getLogger(TokenUtils.class);
 
     private static AdminService staticAdminService;
-
+    private static BusinessService staticBusinessService;
+    private static UserService staticUserService;
     @Resource
     AdminService adminService;
-
+    @Resource
+    BusinessService businessService;
+    @Resource
+    UserService userService;
     @PostConstruct
     public void setUserService() {
         staticAdminService = adminService;
+        staticBusinessService = businessService;
+        staticUserService = userService;
     }
-
     /**
      * 生成token
      */
@@ -59,6 +66,12 @@ public class TokenUtils {
                 String role = userRole.split("-")[1];    // 获取角色
                 if (RoleEnum.ADMIN.name().equals(role)) {
                     return staticAdminService.selectById(Integer.valueOf(userId));
+                }
+                if (RoleEnum.BUSINESS.name().equals(role)) {
+                    return staticBusinessService.selectById(Integer.valueOf(userId));
+                }
+                if (RoleEnum.USER.name().equals(role)) {
+                    return staticUserService.selectById(Integer.valueOf(userId));
                 }
             }
         } catch (Exception e) {
