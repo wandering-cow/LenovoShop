@@ -19,7 +19,7 @@
         <el-table-column prop="name" label="姓名"></el-table-column>
         <el-table-column prop="phone" label="电话"></el-table-column>
         <el-table-column prop="email" label="邮箱"></el-table-column>
-        <el-table-column label="商家图标">
+        <el-table-column label="头像">
           <template v-slot="scope">
             <div style="display: flex; align-items: center">
               <el-image style="width: 40px; height: 40px; border-radius: 50%" v-if="scope.row.avatar"
@@ -28,6 +28,8 @@
           </template>
         </el-table-column>
         <el-table-column prop="role" label="角色"></el-table-column>
+        <el-table-column prop="description" label="商家介绍" :show-overflow-tooltip="true"></el-table-column>
+        <el-table-column prop="status" label="审核状态"></el-table-column>
         <el-table-column label="操作" align="center" width="180">
           <template v-slot="scope">
             <el-button size="mini" type="primary" plain @click="handleEdit(scope.row)">编辑</el-button>
@@ -50,13 +52,13 @@
     </div>
 
 
-    <el-dialog title="信息" :visible.sync="fromVisible" width="40%" :close-on-click-modal="false" destroy-on-close>
+    <el-dialog title="管理员" :visible.sync="fromVisible" width="40%" :close-on-click-modal="false" destroy-on-close>
       <el-form :model="form" label-width="100px" style="padding-right: 50px" :rules="rules" ref="formRef">
         <el-form-item label="用户名" prop="username">
           <el-input v-model="form.username" placeholder="用户名"></el-input>
         </el-form-item>
-        <el-form-item label="昵称" prop="name">
-          <el-input v-model="form.name" placeholder="昵称"></el-input>
+        <el-form-item label="店铺名" prop="name">
+          <el-input v-model="form.name" placeholder="店铺名"></el-input>
         </el-form-item>
         <el-form-item label="电话" prop="phone">
           <el-input v-model="form.phone" placeholder="电话"></el-input>
@@ -74,6 +76,16 @@
           >
             <el-button type="primary">上传头像</el-button>
           </el-upload>
+        </el-form-item>
+        <el-form-item label="商家介绍" prop="description">
+          <el-input v-model="form.description" placeholder="商家介绍"></el-input>
+        </el-form-item>
+        <el-form-item label="审核状态" prop="status">
+          <el-select v-model="form.status" placeholder="请选择" style="width: 100%">
+            <el-option label="审核中" value="审核中"></el-option>
+            <el-option label="审核通过" value="审核通过"></el-option>
+            <el-option label="审核不通过" value="审核不通过"></el-option>
+          </el-select>
         </el-form-item>
       </el-form>
 
