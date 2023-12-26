@@ -3,7 +3,7 @@
     <!--  头部  -->
     <div class="manager-header">
       <div class="manager-header-left">
-        <img src="@/assets/imgs/logo.png" />
+        <img src="@/assets/imgs/logo.png" style="border-radius: 10px" />
         <div class="title">后台管理系统</div>
       </div>
 
@@ -42,19 +42,20 @@
             <template slot="title">
               <i class="el-icon-menu"></i><span>信息管理</span>
             </template>
-            <el-menu-item index="/notice">公告信息</el-menu-item>
-            <el-menu-item index="/type">分类信息</el-menu-item>
+            <el-menu-item v-if="user.role === 'ADMIN'" index="/notice">公告信息</el-menu-item>
+            <el-menu-item v-if="user.role === 'ADMIN'" index="/type">分类信息</el-menu-item>
+            <el-menu-item index="/goods">商品信息</el-menu-item>
+            <el-menu-item index="/orders">订单管理</el-menu-item>
+            <el-menu-item index="/comment">评论管理</el-menu-item>
           </el-submenu>
 
-          <el-submenu index="user">
+          <el-submenu index="user"  v-if="user.role === 'ADMIN'">
             <template slot="title">
               <i class="el-icon-menu"></i><span>用户管理</span>
             </template>
             <el-menu-item index="/admin">管理员信息</el-menu-item>
             <el-menu-item index="/business">商家信息</el-menu-item>
             <el-menu-item index="/user">用户信息</el-menu-item>
-            <el-menu-item index="/goods">商品信息</el-menu-item>
-
           </el-submenu>
         </el-menu>
       </div>
@@ -78,7 +79,8 @@ export default {
   },
   created() {
     if (!this.user.id) {
-      this.$router.push('/login')
+      // this.$router.push('/login')'
+      this.$router.push('/front/home')
     }
   },
   methods: {
