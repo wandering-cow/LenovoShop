@@ -1,19 +1,14 @@
 <template>
   <div>
-    <div class="front-notice"><i class="el-icon-bell" style="margin-right: 2px"></i>公告：{{ top }}</div>
     <!--头部-->
     <div class="front-header">
-      <div class="front-header-left">
+      <div class="front-header-left" @click="navTo('/front/home')">
         <img src="@/assets/imgs/logo.png" alt="">
-        <div class="title">项目前台</div>
+        <div class="title">联想购物商城</div>
       </div>
-      <div class="front-header-center">
-        <div class="front-header-nav">
-          <el-menu :default-active="$route.path" mode="horizontal" router>
-						<el-menu-item index="/front/home">首页</el-menu-item>
-						<el-menu-item index="/front/person">个人中心</el-menu-item>
-          </el-menu>
-        </div>
+      <div class="front-header-center" style="text-align: right">
+        <el-input style="width: 200px" placeholder="请输入商品名称" v-model="name"></el-input>
+        <el-button type="primary" style="margin-left: 5px" @click="search">搜素</el-button>
       </div>
       <div class="front-header-right">
         <div v-if="!user.username">
@@ -23,7 +18,7 @@
         <div v-else>
           <el-dropdown>
             <div class="front-header-dropdown">
-              <img @click="navToPerson" :src="user.avatar" alt="">
+              <img @click="navTo('/front/person')" :src="user.avatar" alt="">
               <div style="margin-left: 10px">
                 <span>{{ user.name }}</span><i class="el-icon-arrow-down" style="margin-left: 5px"></i>
               </div>
@@ -67,12 +62,14 @@ export default {
       top: '',
       notice: [],
       user: JSON.parse(localStorage.getItem("xm-user") || '{}'),
+      name: null
     }
   },
 
   mounted() {
     this.loadNotice()
   },
+
   methods: {
     loadNotice() {
       this.$request.get('/notice/selectAll').then(res => {
@@ -96,19 +93,20 @@ export default {
     navTo(url) {
       location.href = url
     },
-    navToPerson() {
-      location.href = '/front/person'
-    },
     // 退出登录
     logout() {
       localStorage.removeItem("xm-user");
       this.$router.push("/login");
     },
+    search() {
+      let name = this.name ? this.name : ''
+      location.href = '/front/search?name=' + name
+    }
   }
 
 }
 </script>
 
 <style scoped>
-  @import "@/assets/css/front.css";
+@import "@/assets/css/front.css";
 </style>

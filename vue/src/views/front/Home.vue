@@ -1,9 +1,10 @@
 <template>
-  <div class="all">
-  <div style="display: flex">
-      <div class="shop">
-        <div style="background-color: white">
-        <div style="color: #FE0137FF; margin: 15px 0 15px 18px; font-weight: bold; font-size: 16px">主题市场</div>
+  <div class="main-content">
+    <div style="height: 60px; background-color: #C566F6FF"></div>
+    <div style="display: flex">
+      <div class="left"></div>
+      <div style="width: 66%; background-color: white; margin-bottom: 50px">
+        <div style="color: #FE0137FF; margin: 15px 0 15px 18px; font-weight: bold; font-size: 16px">电脑类别</div>
         <div style="display: flex; margin: 0 25px; height: 550px">
           <div style="flex: 2">
             <div style="display: flex; color: #666666FF; margin: 14px 0" v-for="item in typeData">
@@ -98,9 +99,8 @@
           </el-row>
         </div>
       </div>
+      <div class="right"></div>
     </div>
-    </div>
-
   </div>
 </template>
 
@@ -192,35 +192,25 @@ export default {
 </script>
 
 <style scoped>
-
-.shop{
-  position:absolute;
-  top:17%;
-  left:17%;
-  right:17%;
+.main-content {
+  min-height: 100vh;
+  /*overflow: hidden;*/
+  background-size: 100%;
+  background-image: url('@/assets/imgs/img.png');
 }
-.all{
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  width:100%;
-  height:100vh;
+.left {
+  width: 17%;
+  background-repeat: no-repeat;
+  background-image: url('@/assets/imgs/left-img.png');
+}
+.right {
+  width: 17%;
+  background-repeat: no-repeat;
+  background-image: url('@/assets/imgs/right-img.png')
 }
 .el-col-5{
   width: 20%;
   max-width: 20%;
   padding: 10px 10px;
 }
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 </style>
