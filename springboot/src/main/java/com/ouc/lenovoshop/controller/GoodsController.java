@@ -1,14 +1,17 @@
 package com.ouc.lenovoshop.controller;
 
-import com.github.pagehelper.PageInfo;
 import com.ouc.lenovoshop.common.Result;
 import com.ouc.lenovoshop.entity.Goods;
 import com.ouc.lenovoshop.service.GoodsService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * 分类信息表前端操作接口
+ **/
 @RestController
 @RequestMapping("/goods")
 public class GoodsController {
@@ -55,10 +58,16 @@ public class GoodsController {
     /**
      * 根据ID查询
      */
-    @GetMapping("/selectById/{id}")
-    public Result selectById(@PathVariable Integer id) {
+    @GetMapping("/selectById")
+    public Result selectById(@RequestParam Integer id) {
         Goods goods = goodsService.selectById(id);
         return Result.success(goods);
+    }
+
+    @GetMapping("/selectTop15")
+    public Result selectTop15() {
+        List<Goods> list = goodsService.selectTop15();
+        return Result.success(list);
     }
 
     /**
@@ -67,6 +76,30 @@ public class GoodsController {
     @GetMapping("/selectAll")
     public Result selectAll(Goods goods ) {
         List<Goods> list = goodsService.selectAll(goods);
+        return Result.success(list);
+    }
+
+    @GetMapping("/selectByTypeId")
+    public Result selectByTypeId(@RequestParam Integer id) {
+        List<Goods> list = goodsService.selectByTypeId(id);
+        return Result.success(list);
+    }
+
+    @GetMapping("/selectByName")
+    public Result selectByName(@RequestParam String name) {
+        List<Goods> list = goodsService.selectByName(name);
+        return Result.success(list);
+    }
+
+    @GetMapping("/selectByBusinessId")
+    public Result selectByBusinessId(@RequestParam Integer id) {
+        List<Goods> list = goodsService.selectByBusinessId(id);
+        return Result.success(list);
+    }
+
+    @GetMapping("/recommend")
+    public Result recommend() {
+        List<Goods> list = goodsService.recommend();
         return Result.success(list);
     }
 
