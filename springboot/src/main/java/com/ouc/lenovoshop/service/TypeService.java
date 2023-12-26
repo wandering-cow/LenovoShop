@@ -1,14 +1,17 @@
 package com.ouc.lenovoshop.service;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.ouc.lenovoshop.entity.Type;
 import com.ouc.lenovoshop.mapper.TypeMapper;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * 分类信息表业务处理
+ **/
 @Service
 public class TypeService {
 

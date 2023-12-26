@@ -1,23 +1,26 @@
 package com.ouc.lenovoshop.service;
 
 import cn.hutool.core.util.ObjectUtil;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.ouc.lenovoshop.common.Constants;
 import com.ouc.lenovoshop.common.enums.ResultCodeEnum;
+import com.ouc.lenovoshop.common.enums.RoleEnum;
 import com.ouc.lenovoshop.common.enums.StatusEnum;
 import com.ouc.lenovoshop.entity.Account;
 import com.ouc.lenovoshop.entity.Business;
 import com.ouc.lenovoshop.exception.CustomException;
 import com.ouc.lenovoshop.mapper.BusinessMapper;
 import com.ouc.lenovoshop.utils.TokenUtils;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-import com.ouc.lenovoshop.common.enums.RoleEnum;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * 商家业务处理
+ **/
 @Service
 public class BusinessService {
 
