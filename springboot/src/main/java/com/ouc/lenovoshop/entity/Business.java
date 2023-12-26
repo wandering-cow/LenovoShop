@@ -2,6 +2,9 @@ package com.ouc.lenovoshop.entity;
 
 import java.io.Serializable;
 
+/**
+ * 商家
+ */
 public class Business extends Account implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -24,6 +27,7 @@ public class Business extends Account implements Serializable {
 
     private String description;
     private String status;
+
     @Override
     public Integer getId() {
         return id;
@@ -100,11 +104,19 @@ public class Business extends Account implements Serializable {
         this.role = role;
     }
 
-    public void setStatus(String Status) {
-        this.status = status;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getStatus() {
         return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -2,6 +2,9 @@ package com.ouc.lenovoshop.entity;
 
 import java.io.Serializable;
 
+/**
+ * 商品信息表
+ */
 public class Goods implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -18,8 +21,41 @@ public class Goods implements Serializable {
     private Integer count;
     private Integer typeId;
     private Integer businessId;
+
     private String typeName;
     private String businessName;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
 
     public Double getPrice() {
         return price;
@@ -59,38 +95,6 @@ public class Goods implements Serializable {
 
     public void setBusinessId(Integer businessId) {
         this.businessId = businessId;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String name) {
-        this.img = img;
     }
 
     public String getTypeName() {

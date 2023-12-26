@@ -2,6 +2,9 @@ package com.ouc.lenovoshop.entity;
 
 import java.io.Serializable;
 
+/**
+ * 商品分类信息表
+ */
 public class Type implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -42,7 +45,7 @@ public class Type implements Serializable {
         return img;
     }
 
-    public void setImg(String name) {
+    public void setImg(String img) {
         this.img = img;
     }
 }
