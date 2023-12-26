@@ -1,14 +1,17 @@
 package com.ouc.lenovoshop.controller;
 
-import com.github.pagehelper.PageInfo;
 import com.ouc.lenovoshop.common.Result;
 import com.ouc.lenovoshop.entity.Type;
 import com.ouc.lenovoshop.service.TypeService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * 分类信息表前端操作接口
+ **/
 @RestController
 @RequestMapping("/type")
 public class TypeController {

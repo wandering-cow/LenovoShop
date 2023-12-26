@@ -1,14 +1,17 @@
 package com.ouc.lenovoshop.controller;
 
-import com.github.pagehelper.PageInfo;
 import com.ouc.lenovoshop.common.Result;
 import com.ouc.lenovoshop.entity.Business;
 import com.ouc.lenovoshop.service.BusinessService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * 商家前端操作接口
+ **/
 @RestController
 @RequestMapping("/business")
 public class BusinessController {

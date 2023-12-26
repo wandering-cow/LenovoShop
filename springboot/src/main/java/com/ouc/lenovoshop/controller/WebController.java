@@ -7,9 +7,9 @@ import com.ouc.lenovoshop.common.enums.ResultCodeEnum;
 import com.ouc.lenovoshop.common.enums.RoleEnum;
 import com.ouc.lenovoshop.entity.Account;
 import com.ouc.lenovoshop.service.AdminService;
+import com.ouc.lenovoshop.service.BusinessService;
 import com.ouc.lenovoshop.service.UserService;
 import org.springframework.web.bind.annotation.*;
-import com.ouc.lenovoshop.service.BusinessService;
 
 import javax.annotation.Resource;
 
@@ -25,6 +25,7 @@ public class WebController {
     private BusinessService businessService;
     @Resource
     private UserService userService;
+
     @GetMapping("/")
     public Result hello() {
         return Result.success("访问成功");
