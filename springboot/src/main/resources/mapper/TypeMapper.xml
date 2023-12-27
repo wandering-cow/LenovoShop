@@ -36,16 +36,16 @@
     <insert id="insert" parameterType="com.ouc.lenovoshop.entity.Type" useGeneratedKeys="true">
         insert into type
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="id != null">id,</if>
-            <if test="name != null">name,</if>
-            <if test="description != null">description,</if>
-            <if test="img != null">img,</if>
+                <if test="id != null">id,</if>
+                <if test="name != null">name,</if>
+                <if test="description != null">description,</if>
+                <if test="img != null">img,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="id != null">#{id},</if>
-            <if test="name != null">#{name},</if>
-            <if test="description != null">#{description},</if>
-            <if test="img != null">#{img},</if>
+                <if test="id != null">#{id},</if>
+                <if test="name != null">#{name},</if>
+                <if test="description != null">#{description},</if>
+                <if test="img != null">#{img},</if>
         </trim>
     </insert>
 
@@ -62,7 +62,7 @@
                 img = #{img},
             </if>
         </set>
-        where id = #{id}
+        where id = #{id} 
     </update>
 
 </mapper>

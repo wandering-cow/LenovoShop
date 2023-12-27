@@ -4,7 +4,7 @@
     <div style="display: flex">
       <div class="left"></div>
       <div style="width: 66%; background-color: white; margin-bottom: 50px">
-        <div style="color: #FE0137FF; margin: 15px 0 15px 18px; font-weight: bold; font-size: 16px">电脑类别</div>
+        <div style="color: #FE0137FF; margin: 15px 0 15px 18px; font-weight: bold; font-size: 16px">主题市场</div>
         <div style="display: flex; margin: 0 25px; height: 550px">
           <div style="flex: 2">
             <div style="display: flex; color: #666666FF; margin: 14px 0" v-for="item in typeData">

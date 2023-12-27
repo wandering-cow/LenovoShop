@@ -108,5 +108,5 @@ export default {
 </script>
 
 <style scoped>
-@import "@/assets/css/front.css";
+  @import "@/assets/css/front.css";
 </style>

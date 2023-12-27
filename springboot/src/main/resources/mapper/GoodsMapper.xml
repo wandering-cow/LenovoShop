@@ -30,8 +30,8 @@
     <select id="selectById" resultType="com.ouc.lenovoshop.entity.Goods">
         select goods.*, business.name as businessName, type.name as typeName
         from goods
-                 left join business on goods.business_id = business.id
-                 left join type on goods.type_id = type.id
+        left join business on goods.business_id = business.id
+        left join type on goods.type_id = type.id
         where goods.id = #{id}
     </select>
 
@@ -43,26 +43,26 @@
     <insert id="insert" parameterType="com.ouc.lenovoshop.entity.Goods" useGeneratedKeys="true">
         insert into goods
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="id != null">id,</if>
-            <if test="name != null">name,</if>
-            <if test="description != null">description,</if>
-            <if test="img != null">img,</if>
-            <if test="price != null">price,</if>
-            <if test="unit != null">unit,</if>
-            <if test="count != null">count,</if>
-            <if test="typeId != null">type_id,</if>
-            <if test="businessId != null">business_id,</if>
+                <if test="id != null">id,</if>
+                <if test="name != null">name,</if>
+                <if test="description != null">description,</if>
+                <if test="img != null">img,</if>
+                <if test="price != null">price,</if>
+                <if test="unit != null">unit,</if>
+                <if test="count != null">count,</if>
+                <if test="typeId != null">type_id,</if>
+                <if test="businessId != null">business_id,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="id != null">#{id},</if>
-            <if test="name != null">#{name},</if>
-            <if test="description != null">#{description},</if>
-            <if test="img != null">#{img},</if>
-            <if test="price != null">#{price},</if>
-            <if test="unit != null">#{unit},</if>
-            <if test="count != null">#{count},</if>
-            <if test="typeId != null">#{typeId},</if>
-            <if test="businessId != null">#{businessId},</if>
+                <if test="id != null">#{id},</if>
+                <if test="name != null">#{name},</if>
+                <if test="description != null">#{description},</if>
+                <if test="img != null">#{img},</if>
+                <if test="price != null">#{price},</if>
+                <if test="unit != null">#{unit},</if>
+                <if test="count != null">#{count},</if>
+                <if test="typeId != null">#{typeId},</if>
+                <if test="businessId != null">#{businessId},</if>
         </trim>
     </insert>
 
@@ -94,7 +94,7 @@
                 business_id = #{businessId},
             </if>
         </set>
-        where id = #{id}
+        where id = #{id} 
     </update>
 
 </mapper>

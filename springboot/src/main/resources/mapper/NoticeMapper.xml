@@ -52,7 +52,7 @@
         </trim>
     </insert>
 
-    <update id="updateById" parameterType="com.ouc.lenovoshop.entity.Notice">
+    <update id="updateById" parameterType="com.ouc.lenovoshop.entity.Admin">
         update notice
         <set>
             <if test="title != null">
