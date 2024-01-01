@@ -9,7 +9,7 @@
         </div>
         <div style="display: flex; margin-left: 20px">
           <div style="text-align: center; margin-right: 15px">
-            <a href="#" @click="navTo('/front/collect')">
+            <a href="/front/collect" @click="navTo('front/collect')">
               <img
                 src="@/assets/imgs/收藏.png"
                 alt=""
@@ -19,7 +19,7 @@
             </a>
           </div>
           <div style="text-align: center; margin-right: 15px">
-            <a href="#" @click="navTo('/front/address')">
+            <a href="/front/address" @click="navTo('/front/address')">
               <img
                 src="@/assets/imgs/店铺.png"
                 alt=""
@@ -29,7 +29,7 @@
             </a>
           </div>
           <div style="text-align: center; margin-right: 15px">
-            <a href="#" @click="navTo('/front/cart')">
+            <a href="/front/cart" @click="navTo('/front/cart')">
               <img
                 src="@/assets/imgs/购物车.png"
                 alt=""
@@ -39,7 +39,7 @@
             </a>
           </div>
           <div style="text-align: center">
-            <a href="#" @click="navTo('/front/orders')">
+            <a href="/front/orders" @click="navTo('/front/orders')">
               <img
                 src="@/assets/imgs/订单.png"
                 alt=""
@@ -160,6 +160,7 @@ export default {
       this.user = JSON.parse(localStorage.getItem('xm-user') || '{}'); // 重新获取下用户的最新信息
     },
     navTo(url) {
+      console.log(url, '路径');
       location.href = url;
     },
     // 退出登录

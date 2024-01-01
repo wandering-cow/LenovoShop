@@ -12,7 +12,7 @@
             font-size: 16px;
           "
         >
-          主题市场
+          电脑类别
         </div>
         <div style="display: flex; margin: 0 25px; height: 550px">
           <div style="padding-right: 30px">
