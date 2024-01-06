@@ -77,6 +77,7 @@
             <div style="margin-top: 10px">
               <div style="margin-top: 20px" v-for="item in commentData">
                 <div style="display: flex">
+                  <div class="white-block"></div>
                   <div style="width: 40px">
                     <img
                       :src="item.userAvatar"
@@ -97,7 +98,7 @@
                     <div style="color: #7a7a7aff">{{ item.time }}</div>
                   </div>
                 </div>
-                <div style="margin-top: 15px; font-size: 16px">
+                <div style="margin-top: 15px;margin-left: 400px;font-size: 16px">
                   {{ item.content }}
                 </div>
               </div>
@@ -192,5 +193,12 @@ export default {
 .el-tabs__header {
   width: 60% !important;
   margin: 0 auto;
+}
+</style>
+<style>
+.white-block {
+  width: 400px; /* 设置宽度 */
+  height: 40px; /* 设置高度 */
+  background-color: white; /* 设置背景颜色为白色 */
 }
 </style>

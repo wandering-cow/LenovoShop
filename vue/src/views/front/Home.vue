@@ -1,6 +1,9 @@
 <template>
   <div class="main-content">
-    <div style="height: 60px; background-color: #c566f6ff"></div>
+<!--    <div style="height: 60px; background-color: #c566f6ff"></div>-->
+    <div>
+      <img src="@/assets/imgs/carousel-3.png" alt="My Image">
+    </div>
     <div style="display: flex">
       <!-- <div class="left"></div> -->
       <div style="width: 100%; background-color: white; margin-bottom: 50px">
@@ -29,14 +32,14 @@
               </div>
             </div>
           </div>
-          <div style="flex: 5; margin-top: 15px">
+          <div style="flex: 5; margin-top: 0px">
             <div>
-              <el-carousel height="400px" style="border-radius: 10px">
+              <el-carousel height="600px" style="border-radius: 10px">
                 <el-carousel-item v-for="item in carousel_top">
                   <img
                     :src="item"
                     alt=""
-                    style="width: 100%; height: 400px; border-radius: 10px"
+                    style="width: 100%; height: 600px; border-radius: 10px"
                   />
                 </el-carousel-item>
               </el-carousel>
@@ -151,11 +154,12 @@
             </div>
           </div> -->
         </div>
+        <div class="white-block"></div>
         <div
           style="
             margin: 5px 0 0 15px;
             height: 40px;
-            background-color: #04bf04ff;
+            background-color: #e11351;
             font-size: 20px;
             color: white;
             width: 130px;
@@ -165,7 +169,7 @@
             border-radius: 20px;
           "
         >
-          热卖商品
+          商品一览
         </div>
         <div style="margin: 10px 5px 0 5px">
           <el-row>
@@ -205,7 +209,7 @@
           style="
             margin: 40px 0 0 15px;
             height: 40px;
-            background-color: #04bf04ff;
+            background-color: #e11351;
             font-size: 20px;
             color: white;
             width: 130px;
@@ -215,7 +219,7 @@
             border-radius: 20px;
           "
         >
-          猜你喜欢
+          热卖商品
         </div>
         <div style="margin: 10px 5px 0 5px">
           <el-row>
@@ -374,3 +378,11 @@ img {
   padding: 10px 10px;
 }
 </style>
+<style>
+.white-block {
+  width: 400px; /* 设置宽度 */
+  height: 200px; /* 设置高度 */
+  background-color: white; /* 设置背景颜色为白色 */
+}
+</style>
+
