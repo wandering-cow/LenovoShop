@@ -200,7 +200,7 @@
                 {{ item.name }}
               </div>
               <div style="margin-top: 5px; font-size: 20px; color: #ff5000ff">
-                ￥ {{ item.price }} / {{ item.unit }}
+                ￥ {{ item.price }}
               </div>
             </el-col>
           </el-row>
@@ -250,7 +250,7 @@
                 {{ item.name }}
               </div>
               <div style="margin-top: 5px; font-size: 20px; color: #ff5000ff">
-                ￥ {{ item.price }} / {{ item.unit }}
+                ￥ {{ item.price }}
               </div>
             </el-col>
           </el-row>
