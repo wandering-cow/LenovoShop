@@ -14,7 +14,7 @@
         </div>
       </div>
       <div style="width: 250px; padding: 0 20px; border-left: #cccccc 1px solid">
-        <div style="font-size: 18px; color: #000000FF; line-height: 80px; border-bottom: #cccccc 1px solid">猜你喜欢</div>
+        <div style="font-size: 18px; color: #000000FF; line-height: 80px; border-bottom: #cccccc 1px solid">商品推荐</div>
         <div style="margin: 20px 0; padding: 0 10px">
           <div style="margin-bottom: 20px" v-for="item in recommendData">
             <img @click="navTo('/front/detail?id=' + item.id)" :src="item.img" alt="" style="width: 100%; height: 175px; border-radius: 10px; border: #cccccc 1px solid">
